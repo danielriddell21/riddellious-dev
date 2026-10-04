@@ -84,7 +84,7 @@ riddellious-dev/
       configmap.yaml          # fiatlux-config (world config, mounted /etc/fiatlux)
       umami-config.yaml       # kosmos website ID (namespace-local)
       cloudflared/            # fiatlux tunnel client
-      fiatlux/                # simulator pod: fiatlux + ollama sidecar (pulls gemma2:2b via initContainer) + PVC
+      fiatlux/                # simulator pod: fiatlux + ollama sidecar (pulls qwen2.5:3b via initContainer) + PVC
       sqld/                   # libSQL primary; strategy: Recreate (single-writer)
     platform/                 # watched by argocd/platform.yaml — shared services
       namespace.yaml

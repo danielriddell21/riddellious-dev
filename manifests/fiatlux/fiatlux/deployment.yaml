@@ -32,7 +32,7 @@ spec:
                 if ollama list >/dev/null 2>&1; then break; fi
                 sleep 1
               done
-              ollama pull gemma2:2b
+              ollama pull qwen2.5:3b
               kill $PID
               wait $PID || true
           env:

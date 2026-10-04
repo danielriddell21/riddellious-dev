@@ -15,7 +15,7 @@ data:
             at most one tool call per turn with a short justification.
           brain:
             provider: ollama
-            model: gemma2:2b
+            model: qwen2.5:3b
 
     reflect_interval: 20
     max_agents: 8
