@@ -28,6 +28,12 @@ spec:
               value: "0.0.0.0:8080"
             - name: SQLD_DB_PATH
               value: "/var/lib/sqld/kosmos.db"
+            # fiat-lux loads every event in one SELECT; the table outgrew the
+            # 10MB default (fiatlux crash-loops with "Response is too large").
+            - name: SQLD_MAX_RESPONSE_SIZE
+              value: "128MB"
+            - name: SQLD_MAX_TOTAL_RESPONSE_SIZE
+              value: "256MB"
           ports:
             - name: http
               containerPort: 8080
