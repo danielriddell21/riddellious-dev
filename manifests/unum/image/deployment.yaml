@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: unum-image
-          image: ghcr.io/danielriddell21/unum:v1.8.1
+          image: ghcr.io/danielriddell21/unum:v1.8.2
           args: ["image", "--web"]
           ports:
             - containerPort: 8080

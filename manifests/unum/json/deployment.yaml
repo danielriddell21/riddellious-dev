@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: unum-json
-          image: ghcr.io/danielriddell21/unum:v1.8.1
+          image: ghcr.io/danielriddell21/unum:v1.8.2
           args: ["json", "--web"]
           ports:
             - containerPort: 8080
