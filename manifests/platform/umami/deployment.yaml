@@ -14,6 +14,8 @@ spec:
       labels:
         app: umami
     spec:
+      # Nothing here calls the Kubernetes API.
+      automountServiceAccountToken: false
       containers:
         - name: umami
           image: ghcr.io/umami-software/umami:postgresql-latest

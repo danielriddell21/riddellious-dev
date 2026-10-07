@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
 env:
   TF_VAR_hetzner_token: ${{ secrets.HETZNER_TOKEN }}
@@ -33,7 +32,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: hashicorp/setup-terraform@v4
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
         with:
           terraform_version: "~1.6"
 
@@ -50,6 +49,10 @@ jobs:
     name: plan
     needs: validate
     runs-on: ubuntu-latest
+    # The plan summary is posted to the pull request; nothing else here writes.
+    permissions:
+      contents: read
+      pull-requests: write
     environment: terraform-plan
     defaults:
       run:
@@ -57,7 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: hashicorp/setup-terraform@v4
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
         with:
           terraform_version: "~1.6"
 
@@ -93,7 +96,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - uses: hashicorp/setup-terraform@v4
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
         with:
           terraform_version: "~1.6"
 
