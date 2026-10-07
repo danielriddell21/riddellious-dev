@@ -45,9 +45,11 @@ spec:
             requests:
               cpu: 25m
               memory: 64Mi
+              ephemeral-storage: 128Mi
             limits:
               cpu: 250m
               memory: 256Mi
+              ephemeral-storage: 1Gi
           readinessProbe:
             httpGet:
               path: /
