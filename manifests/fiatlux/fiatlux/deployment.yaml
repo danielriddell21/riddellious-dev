@@ -17,6 +17,8 @@ spec:
       labels:
         app: fiatlux
     spec:
+      # Nothing here calls the Kubernetes API.
+      automountServiceAccountToken: false
       initContainers:
         # Pull the Ollama model once. Subsequent restarts reuse the
         # cached layers via the ollama-models PVC.
@@ -83,11 +85,11 @@ spec:
               containerPort: 8080
           env:
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: "http://otel-collector.platform:4319"
+              value: "http://otel-collector.platform:4319"  # NOSONAR: in-cluster traffic, not exposed
             - name: OTEL_SERVICE_NAME
               value: "fiatlux"
             - name: UMAMI_URL
-              value: "http://umami.platform:3000"
+              value: "http://umami.platform:3000"  # NOSONAR: in-cluster traffic, not exposed
             - name: UMAMI_WEBSITE_ID
               valueFrom:
                 configMapKeyRef:

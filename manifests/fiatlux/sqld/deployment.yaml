@@ -17,6 +17,8 @@ spec:
       labels:
         app: sqld
     spec:
+      # Nothing here calls the Kubernetes API.
+      automountServiceAccountToken: false
       containers:
         - name: sqld
           image: ghcr.io/tursodatabase/libsql-server:latest

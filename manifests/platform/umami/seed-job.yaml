@@ -27,6 +27,8 @@ spec:
       labels:
         app: umami-seed
     spec:
+      # Nothing here calls the Kubernetes API.
+      automountServiceAccountToken: false
       restartPolicy: OnFailure
       containers:
         - name: seed
