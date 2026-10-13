@@ -18,7 +18,7 @@ spec:
       automountServiceAccountToken: false
       containers:
         - name: unum-image
-          image: ghcr.io/danielriddell21/unum:v1.9.1
+          image: ghcr.io/danielriddell21/unum:v1.9.5
           args: ["image", "--web"]
           ports:
             - containerPort: 8080
